@@ -53,6 +53,6 @@ app.get('/api/user', (req, res) => {
     })
 })
 
-export {cors}
+export {cors,app}
 
 
