@@ -19,39 +19,12 @@ app.use(express.static("public"))
 app.use(cookieParser())
 
 
+// routes 
+import userRouter from "./routes/user.routes.js"
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+// declare routes
+app.use("/api/v1/users",userRouter)
 
-app.get('/api/user', (req, res) => {
-    res.json({
-        code:200,
-        data:[
-            {
-                _id:"123456",
-                name:'Ankit',
-                course:'BCA',
-                email:'ankitbkana@outlook.com',
-                phone:1234567899990
-            },
-            {
-                _id:"123456",
-                name:'Bhuvan',
-                course:'MCA',
-                email:'bhuvan@outlook.com',
-                phone:3456788765446
-            },
-            {
-                _id:"123456",
-                name:'caption',
-                course:'MBA',
-                email:'caption@outlook.com',
-                phone:9876543333333
-            },
-        ]
-    })
-})
 
 export {cors,app}
 
